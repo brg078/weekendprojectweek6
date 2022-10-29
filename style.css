@@ -20,6 +20,7 @@ h1 {
     /* border-radius: 15px; */
 }
 
+/* isn't working to get table width static, it possible css only affects html elements that were there at page load? */
 .wideblock td{
     width: 120px;
 }
@@ -29,6 +30,16 @@ td {
     margin: 1px;
     padding: 4px;
     /* width: 120px; */
+}
+
+#totalCost {
+    background-color: green;
+    color: azure;
+}
+
+#totalCostRed {
+    background-color: red;
+    color: azure;
 }
 
 /*  see css notes in shawl repo

@@ -7,6 +7,8 @@ $(document).ready(readyNow);
 let employeeInfoArray = [];
 //variable to track employees for the delete function later on
 let hrNumber = 0;
+let totalEmployeeCosts = 0;
+
 
 function readyNow() {
     //console log that dom is loaded
@@ -28,7 +30,7 @@ function employeeInfoAdd() {
         employeeId: $('#employeeIdInput').val(),
         positionTitle: $(`#positionTitleInput`).val(),
         annualSalary: $('#annualSalaryInput').val(),
-        hrNumber: hrNumber,
+        hrNumber: hrNumber, //appends the new unique HR number to new employee entered
     }  //creates object for each employee containing all five parts of information
     
     employeeInfoArray.push(employeeInfoObject);
@@ -40,8 +42,9 @@ function employeeInfoAdd() {
     $(`#positionTitleInput`).val(''),
     $('#annualSalaryInput').val(''),
 
+
     //console logs the array as it stands
-    console.log(employeeInfoArray);
+    //console.log(employeeInfoArray);
     //render to DOM
     render();
 }
@@ -58,7 +61,7 @@ render();
 
 function render() {
     //render is working
-    console.log('render up!');
+    //console.log('render up!');
     //need to empty the .employeeTable so Array output doesn't stack on itself
     $('.employeeTable').empty();
     //iterate though employeeInfoArray to reference employeeInfoObject five key properties entered in input fields
@@ -73,8 +76,26 @@ function render() {
         <td><button class="deleteEmployee">Delete</button></td>
         </tr>`)
     }
-    console.log(employeeInfoArray[1]);
-
+   
+    //total employee costs tally
+    totalEmployeeCosts = 0; //resets so the total doesn't aggregate
+    employeeInfoArray.forEach(employeeInfoObject => {
+        totalEmployeeCosts += Number(employeeInfoObject.annualSalary);
+    });
+    //let intlUs = Intl.NumberFormat('en-US'); attempt to get commas inserted but making a huge mess of things
+    let monthlyEmployeeCosts = ((totalEmployeeCosts / 12).toFixed(2));
+    $('#totalCost').empty();
+    $('#totalCostRed').empty();
+    if (monthlyEmployeeCosts <= 20000) {
+        $('#totalCost').append(`<td>Total Monthly Employee Salary Costs: $${monthlyEmployeeCosts}</td>`)   
+    } else if (monthlyEmployeeCosts > 20000) {
+        $('#totalCostRed').append(`<td>Total Monthly Employee Salary Costs: $${monthlyEmployeeCosts}</td>`)
+    };
+    
+    //$('#totalCost').append(`<td>Total Monthly Employee Salary Costs: ${monthlyEmployeeCosts}</td>`)
 }
+
+
+
 
 // id="${employeeInfoObject.hrNumber}  potential button ID for later on
