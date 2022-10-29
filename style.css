@@ -1,5 +1,39 @@
+body {
+    padding: 1%;
+}
+
 h1 {
     font-style: oblique;
     color: blanchedalmond;
     background-color: gray;
 }
+
+.button {
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    /* border-radius: 15px; */
+}
+
+td {
+    border: 2px solid darkgray;
+    margin: 0px;
+    padding: 4px;
+    width: auto;
+}
+
+/*  see css notes in shawl repo
+.class
+#id
+* select all
+element like div
+
+ CONTENT
+ PADDING
+ BORDER
+ MARGIN
+*/
