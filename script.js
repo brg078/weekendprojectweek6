@@ -49,13 +49,32 @@ function employeeInfoAdd() {
 
 //delete the employee that you clicked on, recreate the array and render it 
 //function deleteEmployeeInfo();
+function employeeInfoDelete() {
 
-function render() {
-    console.log('render up!');
-    
-
-    $()
+render();    
 }
 
-//clear input field, render that employee info onto the DOM
-//function render();
+
+
+function render() {
+    //render is working
+    console.log('render up!');
+    //need to empty the .employeeTable so Array output doesn't stack on itself
+    $('.employeeTable').empty();
+    //iterate though employeeInfoArray to reference employeeInfoObject five key properties entered in input fields
+    for (let employeeInfoObject of employeeInfoArray) {
+        $('.employeeTable').append(`
+        <tr>
+        <td>${employeeInfoObject.firstName}</td>
+        <td>${employeeInfoObject.lastName}</td>
+        <td>${employeeInfoObject.employeeId}</td>
+        <td>${employeeInfoObject.positionTitle}</td>
+        <td>${employeeInfoObject.annualSalary}</td>
+        <td><button class="deleteEmployee">Delete</button></td>
+        </tr>`)
+    }
+    console.log(employeeInfoArray[1]);
+
+}
+
+// id="${employeeInfoObject.hrNumber}  potential button ID for later on
