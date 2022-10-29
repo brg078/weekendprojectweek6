@@ -1,11 +1,55 @@
 body {
     padding: 1%;
+    background-color: #4D5D53;
 }
 
 h1 {
-    font-style: oblique;
-    color: blanchedalmond;
-    background-color: gray;
+    color: #4D5D53;
+    background-color: #FEBE10;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 12px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    font-family: 'Brush Script MT', cursive;
+    text-align: center;
+    color: #FEBE10;
+}
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #FEBE10;
+}
+
+h5, h6 {
+    text-align: center;
+    color: #FEBE10;
+    font-family: 'Brush Script MT', cursive;
+}
+
+
+.inputFields {
+    color: #FEBE10;
+    align-items: center;
+    text-align: center;
+    /* table-layout: fixed; */
+}
+
+td {
+    width: 19%;
+    align-items: center;
+}
+
+.employeeTableTitle {
+    /* text-align: center; */
+    /* table-layout: auto; */
+    /* width: auto; */
+    margin-right: 30%;
+    margin-left: 30%;
 }
 
 .button {
@@ -33,15 +77,22 @@ td {
 }
 
 #totalCost {
-    background-color: green;
-    color: azure;
+    background-color: #4D5D53;
+    color: #FEBE10;
+    text-align: center;
 }
 
 #totalCostRed {
     background-color: red;
-    color: azure;
+    color: #FEBE10;
+    text-align: center;
 }
 
+.employeeTable {
+    color: #4D5D53;
+    background-color:#FEBE10;
+    display: inline-block;
+}
 /*  see css notes in shawl repo
 .class
 #id
