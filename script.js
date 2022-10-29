@@ -15,7 +15,8 @@ function readyNow() {
     console.log("DOM is loaded!");
     //ensure function employeeInfoAdd executes when "submit employee info" is clicked
     $('.button').on('click', employeeInfoAdd);
-
+    //ensure fuction employeeInfoDelete executes when "delete" button is clicked on a row of employee info
+    $('.employeeTable').on('click', '.deleteEmployee', employeeInfoDelete);
   render();
 }
 
@@ -51,10 +52,37 @@ function employeeInfoAdd() {
 
 
 //delete the employee that you clicked on, recreate the array and render it 
-//function deleteEmployeeInfo();
 function employeeInfoDelete() {
+    //let me know if button is activating
+    //console.log('delete employee button clicked')
+    let newEmployeeInfoArray = []; //will hold the posts we still want
+   
 
-render();    
+    //VIN METHOD NOT WORKING
+    let toDelete = $(this).attr('id');
+    console.log('employee hr number we want to delete is', toDelete);
+
+    //POSTS METHOD NOT WORKING
+    //
+    //reminder that $(this) is the specific element that was clicked
+    //let contentToDelete = $(this) // the delete <button>
+    //    .parent()           // the table data <td> in which the button lives
+    //    .siblings()         // all table data <td> in that row
+    //    .first()            // the first those <td>s
+    //    .text();
+    //console.log('content to delete', toDelete)
+    
+    for (let employeeInfoObject of employeeInfoArray) {
+        // add items that don't match contentToDelete into array
+        if (employeeInfoObject.hrNumber  != toDelete) {
+            newEmployeeInfoArray.push(employeeInfoObject);
+            console.log('not to delete!');
+        }
+    }
+    console.log(newEmployeeInfoArray);
+    //update employeeInfoArray to reflect the deleted employee by reconstituting the array minus that deleted employees data
+    employeeInfoArray = newEmployeeInfoArray;
+    render();    
 }
 
 
@@ -73,7 +101,7 @@ function render() {
         <td>${employeeInfoObject.employeeId}</td>
         <td>${employeeInfoObject.positionTitle}</td>
         <td>${employeeInfoObject.annualSalary}</td>
-        <td><button class="deleteEmployee">Delete</button></td>
+        <td><button class="deleteEmployee" id="${employeeInfoObject.hrNumber}">Delete</button></td>
         </tr>`)
     }
    
