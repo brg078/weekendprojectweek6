@@ -36,20 +36,22 @@ h5, h6 {
     color: #FEBE10;
     align-items: center;
     text-align: center;
-    /* table-layout: fixed; */
+    
 }
 
 td {
-    width: 19%;
-    align-items: center;
+    width: 150px;
 }
 
 .employeeTableTitle {
     /* text-align: center; */
     /* table-layout: auto; */
     /* width: auto; */
-    margin-right: 30%;
-    margin-left: 30%;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: #4D5D53;
+    color: #FEBE10;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .button {
@@ -60,19 +62,18 @@ td {
 
 #infoTable {
     width: 700px;
+    /* margin-right: 10%; */
+    /* margin-left: 10%; */
     /* border-collapse: collapse; */
     /* border-radius: 15px; */
-}
-
-/* isn't working to get table width static, it possible css only affects html elements that were there at page load? */
-.wideblock td{
-    width: 120px;
 }
 
 td {
     border: 1px solid darkgray;
     margin: 1px;
     padding: 4px;
+    margin-left: 10%;
+    margin-right: 10%;
     /* width: 120px; */
 }
 
@@ -80,27 +81,25 @@ td {
     background-color: #4D5D53;
     color: #FEBE10;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    width: 200px;
 }
 
 #totalCostRed {
     background-color: red;
     color: #FEBE10;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    width: 200px;
 }
 
 .employeeTable {
     color: #4D5D53;
     background-color:#FEBE10;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10.5%;
+    margin-right: 0 auto;
     display: inline-block;
 }
-/*  see css notes in shawl repo
-.class
-#id
-* select all
-element like div
-
- CONTENT
- PADDING
- BORDER
- MARGIN
-*/
